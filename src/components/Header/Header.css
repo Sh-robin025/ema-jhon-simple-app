@@ -1,0 +1,27 @@
+.header{
+    margin: 10px 50px;
+    padding-bottom: 10px;
+    display: flex;
+    border-bottom: 3px solid #ff9800;
+}
+.header img{
+    height: 70px;
+}
+.buttons{
+    margin-left: auto;
+    margin-top: 15px;
+}
+.buttons a{
+    text-decoration: none;
+    color: black;
+    margin: 25px;
+    padding-top: 10px;
+    line-height: 30px;
+    font-size: x-large;
+}
+.buttons a:hover{
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ff9800;
+}
