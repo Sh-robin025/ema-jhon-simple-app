@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './Cart.css'
 
@@ -7,8 +8,8 @@ const Cart = (props) => {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         const element = cart[i];
-        console.log(element);
-        total = total + element.price;
+        total = total + element.price * element.quantity;
+        // debugger;
     }
 
     let shipping = 0;
@@ -29,13 +30,14 @@ const Cart = (props) => {
     }
 
     return (
-        <div>
-            <table>
-                <tr>Product price : $ {setPrecision(total)}</tr>
-                <tr>Shipping Cost : $ {shipping}</tr>
-                <tr>Tax & Vat : $ {setPrecision(tax)}</tr>
-            </table>
-            <h5>Total : $ {setPrecision(inTotal)}</h5>
+        <div className="cart">
+            <div>
+                <p> <span>Product price : </span><span style={{ marginLeft: '30px' }}>$ {setPrecision(total)}</span></p>
+                <p>Shipping Cost :<span style={{ marginLeft: '30px' }}>$ {shipping}</span> </p>
+                <p>Tax & Vat : <span style={{ marginLeft: '60px', }}>$ {setPrecision(tax)}</span></p>
+            </div>
+            <h5>Total : <span style={{ marginLeft: '95px' }}>$ {setPrecision(inTotal)}</span></h5>
+            {props.children}
         </div>
     );
 };
